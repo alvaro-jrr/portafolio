@@ -1,0 +1,378 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/*
+    Portafolio
+*/
+
+:root {
+	/*
+        Coolors: https://coolors.co/03071e-a7a9be-ecf0f1-1768ac
+    */
+	--dark-blue: hsl(231, 82%, 6%);
+	--light-gray: hsl(235, 15%, 70%);
+	--bright-blue: hsl(207, 76%, 38%);
+	--white: #fffffe;
+	--fs-700: 2rem;
+	--fs-400: 1rem;
+	--inline-space: 1.5rem;
+}
+
+body {
+	background: var(--dark-blue);
+	overflow-x: hidden;
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+/*
+    Inline space
+*/
+.fill-height {
+	padding-inline: clamp(
+		1.5rem,
+		-2.4893617021276593rem + 17.02127659574468vw,
+		9rem
+	);
+}
+
+/*
+    Scrollbar
+*/
+::-webkit-scrollbar {
+	width: 1rem;
+	height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: hsla(0, 0%, 100%, 0.1);
+	border-radius: 100vw;
+}
+
+@supports (scrollbar-color: red blue) {
+	* {
+		scrollbar-color: hsla(0, 0%, 100%, 0.1) transparent;
+		scrollbar-width: thin;
+	}
+}
+
+/*
+    Typography
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--white);
+}
+
+body {
+	font-family: "Space Grotesk", sans-serif;
+	color: var(--white);
+}
+
+.big-heading {
+	font-size: 2.027rem;
+}
+
+.sub-heading {
+	margin-top: 1rem;
+	font-size: 1.802rem;
+	font-weight: 600;
+	color: var(--light-gray);
+}
+
+.heading {
+	font-size: 1.602rem;
+}
+
+.small-heading {
+	font-size: 1.424rem;
+}
+
+.cta {
+	font-size: 1.125rem;
+}
+
+/*
+    Navigation
+*/
+.header {
+	position: fixed;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 4rem;
+	padding-inline: var(--inline-space);
+	background: hsla(231, 82%, 6%, 0.8);
+	backdrop-filter: blur(4px);
+}
+
+.navbar__menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 1rem;
+}
+
+.sr-only {
+	position: absolute;
+	left: -9999px;
+}
+
+.mobile-nav-toggle {
+	display: none;
+}
+
+@media (max-width: 35rem) {
+	.navbar__menu {
+		position: fixed;
+		inset: 0 0 0 40%;
+		background-color: hsl(0, 0%, 0%, 0.5);
+		padding: 10rem 2rem;
+		flex-flow: column nowrap;
+		min-height: 100vh;
+		z-index: 10;
+		transform: translateX(100%);
+		transition: transform 0.25s ease;
+		will-change: transform;
+	}
+
+	.navbar__menu[data-visible="true"] {
+		transform: translate(0%);
+	}
+
+	.mobile-nav-toggle {
+		display: block;
+		position: absolute;
+		width: 2rem;
+		border: none;
+		aspect-ratio: 1;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 2rem;
+		z-index: 20;
+		background-color: transparent;
+		background-image: url("./images/bx-menu-alt-right.svg");
+		background-size: 2rem;
+		background-repeat: no-repeat;
+	}
+
+	.mobile-nav-toggle[aria-expanded="true"] {
+		background-image: url("./images/bx-x.svg");
+	}
+
+	.mobile-nav-toggle:hover {
+		cursor: pointer;
+	}
+
+	@supports (backdrop-filter: blur(1rem)) {
+		.header {
+			backdrop-filter: none;
+		}
+
+		.navbar__menu {
+			background-color: hsla(0, 0%, 100%, 0.1);
+			backdrop-filter: blur(1rem);
+		}
+	}
+}
+
+.navbar__item {
+	display: inline-block;
+}
+
+.navbar__link {
+	display: block;
+	padding: 1rem 0.5rem;
+	text-decoration: none;
+	color: var(--white);
+	border-bottom: 1px solid transparent;
+}
+
+.navbar__link:hover {
+	border-bottom-color: var(--white);
+}
+
+.logo {
+	font-size: 2.027rem;
+}
+
+/*
+    Main
+*/
+.main {
+	display: flex;
+	flex-flow: column nowrap;
+	row-gap: 4rem;
+	margin-inline: auto;
+	width: 100%;
+	max-width: 1600px;
+	min-height: 100vh;
+	background: var(--dark-blue);
+}
+
+/*
+    Section
+*/
+.section {
+	display: flex;
+	flex-flow: column nowrap;
+	row-gap: 2rem;
+}
+
+.section:last-child {
+	margin-bottom: 4rem;
+}
+
+/*
+    Hero Section
+*/
+.hero {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.cta {
+	margin-top: 1rem;
+	max-width: fit-content;
+	padding: 1rem;
+	border-radius: 9999px;
+	border: none;
+	background: var(--bright-blue);
+	color: var(--white);
+	font-weight: 500;
+}
+
+/*
+    About me
+*/
+.personal-img {
+	object-fit: cover;
+	margin-inline: auto;
+	border-radius: 10px;
+}
+
+/*
+    Skills
+*/
+.skills-list {
+	display: flex;
+	flex-flow: column nowrap;
+	row-gap: 1rem;
+	list-style: none;
+	padding: 0;
+}
+
+.skill-item {
+	display: flex;
+	flex-flow: row nowrap;
+	column-gap: var(--inline-space);
+	width: 100%;
+	background: #000;
+	border-radius: 10px;
+	padding: var(--inline-space);
+	align-items: center;
+	font-weight: 500;
+	background: hsla(0, 0%, 100%, 0.1);
+}
+
+/*
+    Work
+*/
+.projects-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+	padding: 0;
+	list-style: none;
+}
+
+.project {
+	background: hsla(0, 0%, 100%, 0.1);
+	border-radius: 10px;
+	padding: 1.5rem;
+}
+
+.project-tile {
+	display: flex;
+	flex-flow: column nowrap;
+	row-gap: 1rem;
+}
+
+.project-about {
+	display: flex;
+	flex-flow: column nowrap;
+	row-gap: 0.5rem;
+}
+
+.project-img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	border-radius: 10px;
+}
+
+.project-description {
+	color: var(--light-gray);
+	margin-bottom: 0;
+}
