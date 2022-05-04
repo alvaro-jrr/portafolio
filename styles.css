@@ -54,17 +54,16 @@ h6 {
 	/*
         Coolors: https://coolors.co/03071e-a7a9be-ecf0f1-1768ac
     */
-	--dark-blue: hsl(231, 82%, 6%);
-	--light-gray: hsl(235, 15%, 70%);
-	--bright-blue: hsl(207, 76%, 38%);
-	--white: #fffffe;
-	--fs-700: 2rem;
-	--fs-400: 1rem;
+	--xikecit: hsl(231, 82%, 6%);
+	--cadet-blue-crayola: hsl(235, 15%, 70%);
+	--sapphire-blue: hsl(207, 76%, 38%);
+	--space-cadet: hsl(232, 27%, 16%);
+	--white: hsl(0, 0%, 100%);
 	--inline-space: 1.5rem;
 }
 
 body {
-	background: var(--dark-blue);
+	background: var(--xikecit);
 	overflow-x: hidden;
 }
 
@@ -133,7 +132,7 @@ body {
 	margin-top: 1rem;
 	font-size: 1.802rem;
 	font-weight: 600;
-	color: var(--light-gray);
+	color: var(--cadet-blue-crayola);
 }
 
 .heading {
@@ -184,8 +183,8 @@ body {
 @media (max-width: 35rem) {
 	.navbar__menu {
 		position: fixed;
-		inset: 0 0 0 40%;
-		background-color: hsl(0, 0%, 0%, 0.5);
+		inset: 0;
+		background-color: var(--space-cadet);
 		padding: 10rem 2rem;
 		flex-flow: column nowrap;
 		min-height: 100vh;
@@ -222,17 +221,6 @@ body {
 	.mobile-nav-toggle:hover {
 		cursor: pointer;
 	}
-
-	@supports (backdrop-filter: blur(1rem)) {
-		.header {
-			backdrop-filter: none;
-		}
-
-		.navbar__menu {
-			background-color: hsla(0, 0%, 100%, 0.1);
-			backdrop-filter: blur(1rem);
-		}
-	}
 }
 
 .navbar__item {
@@ -266,7 +254,7 @@ body {
 	width: 100%;
 	max-width: 1600px;
 	min-height: 100vh;
-	background: var(--dark-blue);
+	background: var(--xikecit);
 }
 
 /*
@@ -298,7 +286,7 @@ body {
 	padding: 1rem;
 	border-radius: 9999px;
 	border: none;
-	background: var(--bright-blue);
+	background: var(--sapphire-blue);
 	color: var(--white);
 	font-weight: 500;
 }
@@ -328,12 +316,11 @@ body {
 	flex-flow: row nowrap;
 	column-gap: var(--inline-space);
 	width: 100%;
-	background: #000;
 	border-radius: 10px;
 	padding: var(--inline-space);
 	align-items: center;
 	font-weight: 500;
-	background: hsla(0, 0%, 100%, 0.1);
+	background: var(--space-cadet);
 }
 
 /*
@@ -348,7 +335,7 @@ body {
 }
 
 .project {
-	background: hsla(0, 0%, 100%, 0.1);
+	background: var(--space-cadet);
 	border-radius: 10px;
 	padding: 1.5rem;
 }
@@ -373,6 +360,6 @@ body {
 }
 
 .project-description {
-	color: var(--light-gray);
+	color: var(--cadet-blue-crayola);
 	margin-bottom: 0;
 }
