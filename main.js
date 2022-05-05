@@ -1,5 +1,5 @@
-const navMenu = document.getElementById("nav-menu");
-const navToggle = document.querySelector(".mobile-nav-toggle");
+const navMenu = document.getElementById("menu");
+const navToggle = document.querySelector(".menu__toggle");
 
 navToggle.addEventListener("click", () => {
 	const isVisible = navMenu.getAttribute("data-visible") === "true";
