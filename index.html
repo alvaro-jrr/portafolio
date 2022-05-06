@@ -17,96 +17,119 @@
 	</head>
 	<body>
 		<header class="header">
-			<h1 class="logo">&lt;AR/&gt;</h1>
+			<figure>
+				<svg
+					width="104.55"
+					height="32"
+					viewBox="0 0 379 116"
+					class="header__logo"
+					aria-labelledby="personal-logo"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<title id="personal-logo">Personal logo</title>
+
+					<path
+						d="M54.56 73.36L0.8 55.184V35.216L54.56 17.04V32.4L16.416 44.048V46.352L54.56 58V73.36ZM69.679 90L93.231 0.399994H122.671L146.223 90H128.815L123.951 70.288H91.951L87.087 90H69.679ZM95.919 54.672H119.983L109.103 11.024H106.799L95.919 54.672ZM156.948 90V0.399994H195.86C201.492 0.399994 206.399 1.38133 210.58 3.34399C214.761 5.30666 218.004 8.07999 220.308 11.664C222.612 15.248 223.764 19.472 223.764 24.336V25.872C223.764 31.248 222.484 35.6 219.924 38.928C217.364 42.256 214.207 44.688 210.452 46.224V48.528C213.865 48.6987 216.511 49.8933 218.388 52.112C220.265 54.2453 221.204 57.104 221.204 60.688V90H204.308V63.12C204.308 61.072 203.753 59.408 202.644 58.128C201.62 56.848 199.871 56.208 197.396 56.208H173.844V90H156.948ZM173.844 40.848H194.068C198.079 40.848 201.193 39.7813 203.412 37.648C205.716 35.4293 206.868 32.528 206.868 28.944V27.664C206.868 24.08 205.759 21.2213 203.54 19.088C201.321 16.8693 198.164 15.76 194.068 15.76H173.844V40.848ZM259.827 115.6L297.459 0.399994H313.587L275.955 115.6H259.827ZM324.3 73.36V58L362.444 46.352V44.048L324.3 32.4V17.04L378.06 35.216V55.184L324.3 73.36Z"
+						fill="currentColor"
+					/>
+				</svg>
+			</figure>
 
 			<button
-				class="mobile-nav-toggle"
-				aria-controls="nav-menu"
+				class="menu__toggle"
+				aria-controls="menu"
 				aria-expanded="false"
 			>
 				<span class="sr-only">Menu</span>
 			</button>
 
-			<nav class="navbar">
-				<ul data-visible="false" id="nav-menu" class="navbar__menu">
-					<li class="navbar__item">
-						<a class="navbar__link" href="#about_me">About me</a>
+			<nav>
+				<ul data-visible="false" id="menu" class="menu">
+					<li>
+						<a class="menu__link" href="#about_me">About me</a>
 					</li>
 
-					<li class="navbar__item">
-						<a class="navbar__link" href="#skills">Skills</a>
+					<li>
+						<a class="menu__link" href="#skills">Skills</a>
 					</li>
 
-					<li class="navbar__item">
-						<a class="navbar__link" href="#work">Work</a>
+					<li>
+						<a class="menu__link" href="#work">Work</a>
 					</li>
 
-					<li class="navbar__item">
-						<a class="navbar__link" href="#contact">Contact</a>
+					<li>
+						<a class="menu__link" href="#contact">Contact</a>
 					</li>
 				</ul>
 			</nav>
 		</header>
 
-		<main class="main fill-height">
-			<section class="hero">
-				<h2 class="big-heading">Hi, I'm Alvaro.</h2>
+		<main class="main">
+			<section class="section section--hero">
+				<h1 class="text-3xl">Hi, I'm Alvaro.</h1>
 
-				<h3 class="sub-heading">
-					I'm a Web Developer and Informatics Engineering student.
-				</h3>
+				<h2 class="text-2xl">
+					<span class="hero__subheading"
+						>Web Developer and Informatics Engineering
+						student.</span
+					>
+				</h2>
 
-				<button class="cta">Let's work together</button>
+				<button class="btn">
+					<span class="text-md">Let's work together</span>
+				</button>
 			</section>
 
 			<section id="about_me" class="section">
-				<h2 class="heading">About me</h2>
+				<h2 class="text-xl">About me</h2>
 
-				<img
-					class="personal-img"
-					src="https://images.pexels.com/photos/8435232/pexels-photo-8435232.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-					loading="lazy"
-					decoding="async"
-					width="300"
-					height="300"
-					alt="Profile Picture"
-				/>
+				<figure class="personal">
+					<img
+						class="personal__img"
+						src="https://images.pexels.com/photos/8435232/pexels-photo-8435232.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						loading="lazy"
+						decoding="async"
+						width="300"
+						height="300"
+						alt="Profile Picture"
+					/>
 
-				<div>
-					<p>
-						My name is Alvaro Resplandor, I’m a 19 year old web
-						developer from Venezuela and I’m currently studying
-						Informatics Engineering at Universidad Nacional
-						Experimental de Guayana (UNEG).
-					</p>
+					<figcaption class="personal__description">
+						<p>
+							My name is Alvaro Resplandor, I’m a 19 year old web
+							developer from Venezuela and I’m currently studying
+							Informatics Engineering at Universidad Nacional
+							Experimental de Guayana (UNEG).
+						</p>
 
-					<p>
-						In other hand, I work in Corporacion Eléctrica Nacional
-						(CORPOELEC) creating web apps to use internally in the
-						company.
-					</p>
+						<p>
+							In other hand, I work in Corporacion Eléctrica
+							Nacional (CORPOELEC) creating web apps to use
+							internally in the company.
+						</p>
 
-					<p>
-						My journey on web development started back in 2020 when
-						I found the Introduction to Web Development course from
-						Google Actívate, where I gave my first steps with HTML
-						and CSS.
-					</p>
+						<p>
+							My journey on web development started back in 2020
+							when I found the Introduction to Web Development
+							course from Google Actívate, where I gave my first
+							steps with HTML and CSS.
+						</p>
 
-					<p>
-						Since then I have been improving my techniques and
-						skills through challenges and personal projects, what
-						made me test my abilities and find what I could do
-						better and what things I struggle the most.
-					</p>
-				</div>
+						<p>
+							Since then I have been improving my techniques and
+							skills through challenges and personal projects,
+							what made me test my abilities and find what I could
+							do better and what things I struggle the most.
+						</p>
+					</figcaption>
+				</figure>
 			</section>
 
 			<section id="skills" class="section">
-				<h2 class="heading">Skills</h2>
+				<h2 class="text-xl">Skills</h2>
 
-				<ul class="skills-list">
-					<li class="skill-item">
+				<ul class="skills">
+					<li class="skills__item">
 						<img
 							width="50"
 							height="50"
@@ -119,7 +142,7 @@
 						<abrr title="HyperText Markup Language">HTML</abrr>
 					</li>
 
-					<li class="skill-item">
+					<li class="skills__item">
 						<img
 							width="50"
 							height="50"
@@ -132,7 +155,7 @@
 						<abrr title="Cascade Styles Sheet">CSS</abrr>
 					</li>
 
-					<li class="skill-item">
+					<li class="skills__item">
 						<img
 							width="50"
 							height="50"
@@ -148,13 +171,13 @@
 			</section>
 
 			<section id="work" class="section">
-				<h2 class="heading">Work</h2>
+				<h2 class="text-xl">Work</h2>
 
-				<ul class="projects-list">
-					<li class="project">
-						<figure class="project-tile">
+				<ul class="projects">
+					<li>
+						<figure class="projects__item">
 							<img
-								class="project-img"
+								class="projects__img"
 								src="https://images.pexels.com/photos/6910472/pexels-photo-6910472.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 								height="150"
 								width="295"
@@ -162,10 +185,10 @@
 								decoding="async"
 							/>
 
-							<figcaption class="project-about">
-								<h3 class="small-heading">Project title</h3>
+							<figcaption class="projects__about">
+								<h3 class="text-lg">Todo App</h3>
 
-								<p class="project-description">
+								<p class="projects__description">
 									Lorem ipsum dolor sit amet consectetur
 									adipisicing elit. Praesentium maxime
 									nesciunt maiores ad ea nisi sit aspernatur
@@ -176,10 +199,10 @@
 						</figure>
 					</li>
 
-					<li class="project">
-						<figure class="project-tile">
+					<li>
+						<figure class="projects__item">
 							<img
-								class="project-img"
+								class="projects__img"
 								src="https://images.pexels.com/photos/6910472/pexels-photo-6910472.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 								height="150"
 								width="295"
@@ -187,10 +210,10 @@
 								decoding="async"
 							/>
 
-							<figcaption class="project-about">
-								<h3 class="small-heading">Project title</h3>
+							<figcaption class="projects__about">
+								<h3 class="text-lg">Markdown Editor</h3>
 
-								<p class="project-description">
+								<p class="projects__description">
 									Lorem ipsum dolor sit amet consectetur
 									adipisicing elit. Praesentium maxime
 									nesciunt maiores ad ea nisi sit aspernatur
@@ -201,10 +224,10 @@
 						</figure>
 					</li>
 
-					<li class="project">
-						<figure class="project-tile">
+					<li>
+						<figure class="projects__item">
 							<img
-								class="project-img"
+								class="projects__img"
 								src="https://images.pexels.com/photos/6910472/pexels-photo-6910472.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 								height="150"
 								width="295"
@@ -212,10 +235,10 @@
 								decoding="async"
 							/>
 
-							<figcaption class="project-about">
-								<h3 class="small-heading">Project title</h3>
+							<figcaption class="projects__about">
+								<h3 class="text-lg">Giphy App</h3>
 
-								<p class="project-description">
+								<p class="projects__description">
 									Lorem ipsum dolor sit amet consectetur
 									adipisicing elit. Praesentium maxime
 									nesciunt maiores ad ea nisi sit aspernatur
