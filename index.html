@@ -5,14 +5,33 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="theme-color" content="hsl(231, 82%, 6%)" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
 		<link rel="stylesheet" href="./styles.css" />
 		<script src="./main.js" defer></script>
+
+		<!-- 
+            Load Fonts that fights FOUT (Flash of Unstyled Text)
+            https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/
+        -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+			rel="preload"
+			as="style"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
+
 		<title>AR | Portafolio</title>
 	</head>
 	<body>
@@ -75,9 +94,9 @@
 					>
 				</h2>
 
-				<button class="btn">
-					<span class="text-md">Let's work together</span>
-				</button>
+				<a class="btn hero__cta text-md" href="#contact"
+					>Let's work together</a
+				>
 			</section>
 
 			<section id="about_me" class="section">
@@ -176,14 +195,20 @@
 				<ul class="projects">
 					<li>
 						<figure class="projects__item">
-							<img
-								class="projects__img"
-								src="https://images.pexels.com/photos/6910472/pexels-photo-6910472.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-								height="150"
-								width="295"
-								loading="lazy"
-								decoding="async"
-							/>
+							<a
+								href="https://todo-app-alvaro-jrr.vercel.app/"
+								class="projects__link"
+								target="_blank"
+							>
+								<img
+									alt="Todo App desktop screenshot"
+									src="./images/todo_app_screnshot.png"
+									height="2880"
+									width="1800"
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
 
 							<figcaption class="projects__about">
 								<h3 class="text-lg">Todo App</h3>
@@ -201,14 +226,20 @@
 
 					<li>
 						<figure class="projects__item">
-							<img
-								class="projects__img"
-								src="https://images.pexels.com/photos/6910472/pexels-photo-6910472.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-								height="150"
-								width="295"
-								loading="lazy"
-								decoding="async"
-							/>
+							<a
+								href="https://markdown-editor-alvaro-jrr.vercel.app/"
+								class="projects__link"
+								target="_blank"
+							>
+								<img
+									alt="Markdown Editor desktop screenshot"
+									src="./images/markdown_editor_screenshot.png"
+									height="2880"
+									width="1800"
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
 
 							<figcaption class="projects__about">
 								<h3 class="text-lg">Markdown Editor</h3>
@@ -226,17 +257,122 @@
 
 					<li>
 						<figure class="projects__item">
-							<img
-								class="projects__img"
-								src="https://images.pexels.com/photos/6910472/pexels-photo-6910472.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-								height="150"
-								width="295"
-								loading="lazy"
-								decoding="async"
-							/>
+							<a
+								href="https://testimonials-grid-section-sigma.vercel.app/"
+								class="projects__link"
+								target="_blank"
+							>
+								<img
+									alt="Testimonial Grid Section desktop screenshot"
+									src="./images/testimonials_grid_section_screenshot.png"
+									height="2880"
+									width="1800"
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
 
 							<figcaption class="projects__about">
-								<h3 class="text-lg">Giphy App</h3>
+								<h3 class="text-lg">
+									Testimonial Grid Section
+								</h3>
+
+								<p class="projects__description">
+									Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Praesentium maxime
+									nesciunt maiores ad ea nisi sit aspernatur
+									eaque quas iste! Impedit harum minus error
+									nesciunt esse saepe quae rem quisquam?
+								</p>
+							</figcaption>
+						</figure>
+					</li>
+
+					<li>
+						<figure class="projects__item">
+							<a
+								href="https://chat-app-css-illustration-steel.vercel.app/"
+								class="projects__link"
+								target="_blank"
+							>
+								<img
+									alt="Chat APP CSS Illustration desktop screenshot"
+									src="./images/chat_app_css_illustration_screenshot.png"
+									height="2880"
+									width="1800"
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
+
+							<figcaption class="projects__about">
+								<h3 class="text-lg">
+									Chat App CSS Illustration
+								</h3>
+
+								<p class="projects__description">
+									Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Praesentium maxime
+									nesciunt maiores ad ea nisi sit aspernatur
+									eaque quas iste! Impedit harum minus error
+									nesciunt esse saepe quae rem quisquam?
+								</p>
+							</figcaption>
+						</figure>
+					</li>
+
+					<li>
+						<figure class="projects__item">
+							<a
+								href="https://fylo-landing-page-zeta-eight.vercel.app/"
+								class="projects__link"
+								target="_blank"
+							>
+								<img
+									alt="Fylo Landing Page desktop screenshot"
+									src="./images/fylo_landing_page_screenshot.png"
+									height="2880"
+									width="1800"
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
+
+							<figcaption class="projects__about">
+								<h3 class="text-lg">Fylo Landing Page</h3>
+
+								<p class="projects__description">
+									Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Praesentium maxime
+									nesciunt maiores ad ea nisi sit aspernatur
+									eaque quas iste! Impedit harum minus error
+									nesciunt esse saepe quae rem quisquam?
+								</p>
+							</figcaption>
+						</figure>
+					</li>
+
+					<li>
+						<figure class="projects__item">
+							<a
+								href="https://nft-preview-card-component-sigma.vercel.app/"
+								class="projects__link"
+								target="_blank"
+							>
+								<img
+									alt="NFT Preview Card Component desktop screenshot"
+									src="./images/nft_preview_card_component_screenshot.png"
+									height="2880"
+									width="1800"
+									loading="lazy"
+									decoding="async"
+								/>
+							</a>
+
+							<figcaption class="projects__about">
+								<h3 class="text-lg">
+									NFT Preview Card Component
+								</h3>
 
 								<p class="projects__description">
 									Lorem ipsum dolor sit amet consectetur
@@ -249,6 +385,10 @@
 						</figure>
 					</li>
 				</ul>
+			</section>
+
+			<section id="contact" class="section">
+				<h2 class="text-xl">Contact</h2>
 			</section>
 		</main>
 	</body>
