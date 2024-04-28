@@ -7,6 +7,8 @@ export function Drawer({ children }: { children: ReactNode | ReactNode[] }) {
 		<Sheet>
 			<SheetTrigger>
 				<Menu />
+
+				<span className="sr-only">Menú</span>
 			</SheetTrigger>
 
 			<SheetContent>{children}</SheetContent>
