@@ -6,18 +6,36 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const url = "https://alvaro-resplandor.vercel.app";
+const summary = "Portafolio de Alvaro Resplandor";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={summary} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={summary} />
+		<meta property="og:image" content="" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
+		<meta property="twitter:url" content={url} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={summary} />
+		<meta name="twitter:image" content="" />
+
 		<title>{title}</title>
 	</head>
+
 	<body class="min-h-screen scroll-smooth bg-background antialiased">
 		<slot />
 	</body>
