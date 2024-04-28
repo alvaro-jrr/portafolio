@@ -1,0 +1,52 @@
+---
+import Section from "../Section.astro";
+import { Button } from "../ui/button";
+import Github from "@/icons/Github.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Profile from "@/images/Profile.astro";
+import { Download } from "lucide-react";
+
+const github = "https://github.com/alvaro-jrr";
+const linkedIn =
+	"https://www.linkedin.com/in/alvaro-resplandor-rodriguez-6a7a4824a/";
+---
+
+<Section className="py-24">
+	<div class="grid grid-cols-1 md:grid-cols-2">
+		<div class="flex flex-col gap-6">
+			<div class="space-y-2">
+				<h1 class="font-karla text-4xl font-bold text-foreground">
+					Alvaro Resplandor
+				</h1>
+
+				<p class="font-karla text-2xl text-muted-foreground">
+					Desarrollador Web y de Aplicaciones Móviles
+				</p>
+			</div>
+
+			<Button client:load className="w-fit">
+				<span>Descargar CV</span>
+
+				<Download className="ml-2 h-4 w-4" />
+			</Button>
+
+			<div class="flex gap-x-4">
+				<a href={github} target="_blank">
+					<Github width={32} height={32} />
+
+					<span class="sr-only">Github</span>
+				</a>
+
+				<a href={linkedIn} class="text-blue-600" target="_blank">
+					<LinkedIn width={32} height={32} />
+
+					<span class="sr-only">LinkedIn</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="hidden md:grid md:place-content-center">
+			<Profile size={300} loading="eager" />
+		</div>
+	</div>
+</Section>

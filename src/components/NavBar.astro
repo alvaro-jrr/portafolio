@@ -1,0 +1,71 @@
+---
+import { Drawer } from "./Drawer";
+import Logo from "@/icons/Logo.astro";
+
+/**
+ * The page sections.
+ */
+const sections: Array<{
+	title: string;
+	href: string;
+}> = [
+	{
+		title: "Sobre mi",
+		href: "#about",
+	},
+	{
+		title: "Experiencia",
+		href: "#expirience",
+	},
+	// {
+	// 	title: "Proyectos",
+	// 	href: "#projects",
+	// },
+	// {
+	// 	title: "Contacto",
+	// 	href: "#contact",
+	// },
+];
+---
+
+<nav class="container flex items-center justify-between py-4">
+	<Logo width={72} color="black" />
+
+	<div class="block md:hidden">
+		<Drawer client:load>
+			<ul>
+				{
+					sections.map(({ title, href }) => {
+						return (
+							<li>
+								<a
+									href={href}
+									class="block px-4 py-2 font-medium text-muted-foreground transition-colors hover:text-foreground"
+								>
+									{title}
+								</a>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</Drawer>
+	</div>
+
+	<ul class="hidden md:flex">
+		{
+			sections.map(({ title, href }) => {
+				return (
+					<li>
+						<a
+							href={href}
+							class="block px-4 py-2 font-medium text-muted-foreground transition-colors hover:text-foreground"
+						>
+							{title}
+						</a>
+					</li>
+				);
+			})
+		}
+	</ul>
+</nav>

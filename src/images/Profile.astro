@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "@/assets/profile.png";
+import type { HTMLAttributes } from "astro/types";
+import { cn } from "@/lib/utils";
+
+interface Props extends Omit<HTMLAttributes<"img">, "class"> {
+	size: number;
+	className?: astroHTML.JSX.HTMLAttributes["class"];
+}
+
+const { size, loading, className } = Astro.props;
+---
+
+<Image
+	class={cn("overflow-clip rounded-full", className)}
+	src={profileImage}
+	alt="Imagen de perfil"
+	loading={loading}
+	width={size}
+	height={size}
+/>

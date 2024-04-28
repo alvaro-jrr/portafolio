@@ -1,0 +1,28 @@
+---
+interface Props {
+	company: string;
+	position: string;
+	duration: string;
+	description: string;
+}
+
+const { company, position, duration, description } = Astro.props;
+---
+
+<div class="w-full space-y-4 border-l-2 py-4 pl-4">
+	<div class="flex justify-between">
+		<div class="space-y-1">
+			<h3 class="font-karla text-xl font-semibold text-foreground">
+				{company}
+			</h3>
+
+			<p class="text-muted-foreground">{position}</p>
+
+			<p class="text-muted-foreground sm:hidden">{duration}</p>
+		</div>
+
+		<p class="hidden text-muted-foreground sm:block">{duration}</p>
+	</div>
+
+	<p>{description}</p>
+</div>
