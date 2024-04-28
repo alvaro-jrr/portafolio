@@ -1,14 +1,16 @@
 ---
 import Github from "@/icons/Github.astro";
 import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
 import Profile from "@/images/Profile.astro";
-import { Download, Mail } from "lucide-react";
+import { Download } from "lucide-react";
+import LinkButton from "../LinkButton.astro";
 import Section from "../Section.astro";
-import { Button, buttonVariants } from "../ui/button";
 
 const github = "https://github.com/alvaro-jrr";
 const linkedIn =
 	"https://www.linkedin.com/in/alvaro-resplandor-rodriguez-6a7a4824a/";
+const email = "alvarojrr79@gmail.com";
 ---
 
 <Section className="py-24">
@@ -24,41 +26,35 @@ const linkedIn =
 				</p>
 			</div>
 
-			<Button client:load className="w-fit">
+			<LinkButton href="cv.pdf" download="Alvaro Resplandor - CV" class="w-fit">
 				<span>Descargar CV</span>
 
-				<Download className="ml-2 h-4 w-4" />
-			</Button>
+				<Download client:load className="ml-2 h-4 w-4" />
+			</LinkButton>
 
 			<div class="flex gap-x-4">
-				<a
-					href="mailto:alvarojrr79@gmail.com"
-					class={buttonVariants({ size: "icon", variant: "ghost" })}
+				<LinkButton
+					href={`mailto:${email}`}
+					target="_blank"
+					variant="ghost"
+					size="icon"
 				>
 					<span class="sr-only">Enviar correo</span>
 
-					<Mail className="h-6 w-6" />
-				</a>
+					<Mail size={24} />
+				</LinkButton>
 
-				<a
-					href={github}
-					target="_blank"
-					class={buttonVariants({ size: "icon", variant: "ghost" })}
-				>
+				<LinkButton href={github} target="_blank" variant="ghost" size="icon">
 					<Github size={24} />
 
 					<span class="sr-only">Github</span>
-				</a>
+				</LinkButton>
 
-				<a
-					href={linkedIn}
-					target="_blank"
-					class={buttonVariants({ size: "icon", variant: "ghost" })}
-				>
+				<LinkButton href={linkedIn} target="_blank" variant="ghost" size="icon">
 					<LinkedIn size={24} />
 
 					<span class="sr-only">LinkedIn</span>
-				</a>
+				</LinkButton>
 			</div>
 		</div>
 
