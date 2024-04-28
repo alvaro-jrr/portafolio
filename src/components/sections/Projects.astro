@@ -1,7 +1,55 @@
 ---
+import giphyAppImage from "@/assets/giphy_app.jpg";
+import markdownEditorImage from "@/assets/markdown_editor.jpg";
+import pokedexImage from "@/assets/pokedex_16x9.jpg";
+import Flutter from "@/icons/Flutter.astro";
+import JavaScript from "@/icons/JavaScript.astro";
+import React from "@/icons/React.astro";
+import Project from "../Project.astro";
 import Section from "../Section.astro";
 ---
 
 <Section title="Proyectos" titleId="projects" className="py-24">
-	<p>Hello</p>
+	<div class="grid grid-cols-1 gap-x-4 gap-y-6 md:grid-cols-3">
+		<Project
+			name="Pokedex"
+			description="App para buscar y guardar tus pokemones favoritos."
+			image={pokedexImage}
+			repositoryUrl="https://github.com/alvaro-jrr/pokedex_app"
+		>
+			<div class="text-sky-400">
+				<Flutter size={32} />
+			</div>
+		</Project>
+
+		<Project
+			name="Giphy App"
+			description="App para buscar y guardar tus pokemones favoritos."
+			image={giphyAppImage}
+			repositoryUrl="https://github.com/alvaro-jrr/giphy-react-app"
+		>
+			<div class="text-yellow-400">
+				<JavaScript size={32} />
+			</div>
+
+			<div class="text-blue-400">
+				<React size={32} />
+			</div>
+		</Project>
+
+		<Project
+			name="Editor de Markdown"
+			description="App para escribir Markdown y ver la previsualización."
+			image={markdownEditorImage}
+			repositoryUrl="https://github.com/alvaro-jrr/markdown-editor"
+		>
+			<div class="text-yellow-400">
+				<JavaScript size={32} />
+			</div>
+
+			<div class="text-blue-400">
+				<React size={32} />
+			</div>
+		</Project>
+	</div>
 </Section>
