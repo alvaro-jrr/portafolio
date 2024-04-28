@@ -1,0 +1,46 @@
+---
+import Github from "@/icons/Github.astro";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+	name: string;
+	description: string;
+	image: ImageMetadata;
+	repositoryUrl: string;
+}
+
+const { name, description, image, repositoryUrl } = Astro.props;
+---
+
+<article class="overflow-hidden rounded-md bg-slate-50 transition-transform">
+	<div class="relative w-full overflow-hidden rounded-md">
+		<a
+			target="_blank"
+			href={repositoryUrl}
+			class="absolute inset-0 grid place-content-center bg-foreground/60 text-white opacity-0 transition-opacity hover:opacity-100"
+		>
+			<Github size={32} />
+
+			<span class="sr-only">Visitar repositorio</span>
+		</a>
+
+		<Image
+			src={image}
+			class="aspect-video w-full object-cover"
+			alt={`Vistazo del proyecto ${name}`}
+		/>
+	</div>
+
+	<div class="space-y-4 p-4">
+		<div class="space-y-2">
+			<h3 class="font-karla text-xl font-semibold">{name}</h3>
+
+			<p>{description}</p>
+		</div>
+
+		<div class="flex gap-2">
+			<slot />
+		</div>
+	</div>
+</article>

@@ -1,0 +1,35 @@
+---
+import Profile from "@/images/Profile.astro";
+import Section from "../Section.astro";
+
+const technologies = ["JavaScript", "TypeScript", "Flutter", "PHP", "Laravel"];
+---
+
+<Section title="Sobre mi" titleId="about" className="py-24">
+	<div class="space-y-6 md:max-w-[70ch]">
+		<div class="space-y-4">
+			<p>
+				¡Hola! Mi nombre es Alvaro Resplandor. Inicié en el desarrollo web hace
+				más de 3 años, desde entonces he creado diferentes páginas y sistemas.
+				Actualmente estoy trabajando como desarrollador de aplicaciones móviles
+				con Flutter.
+			</p>
+
+			<p>
+				Soy estudiante de Ingeniería en Informática y me mantengo en constante
+				aprendizaje de las últimas tecnologías y tendencias. He aqui algunas de
+				las tecnologías con las que he trabajado:
+			</p>
+		</div>
+
+		<ul class="grid grid-cols-1 gap-2 md:grid-cols-2">
+			{
+				technologies.map((technology) => (
+					<li class="ml-4 list-disc">{technology}</li>
+				))
+			}
+		</ul>
+	</div>
+
+	<Profile size={300} loading="lazy" className="mx-auto mt-6 md:hidden" />
+</Section>

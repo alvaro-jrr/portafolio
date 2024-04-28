@@ -1,0 +1,22 @@
+---
+import ExpirienceItem from "../ExpirienceItem.astro";
+import Section from "../Section.astro";
+---
+
+<Section title="Experiencia" titleId="expirience" className="py-24">
+	<div class="flex max-w-[70ch] flex-col gap-6">
+		<ExpirienceItem
+			company="CORPOELEC, S.A."
+			duration="2020 - Actualidad"
+			position="Desarrollador Web"
+			description="Desarrollé un sistema para la gestión de los datos climatológicos medidos y una página para la vista rápida de la información de los caudales."
+		/>
+
+		<ExpirienceItem
+			company="Nolatech"
+			duration="2023 - Actualidad"
+			position="Mobile Developer"
+			description="Desarrollo diversas aplicaciones móviles con el uso de Flutter."
+		/>
+	</div>
+</Section>

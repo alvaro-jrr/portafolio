@@ -1,0 +1,65 @@
+---
+import Github from "@/icons/Github.astro";
+import LinkedIn from "@/icons/LinkedIn.astro";
+import Mail from "@/icons/Mail.astro";
+import Profile from "@/images/Profile.astro";
+import { Download } from "lucide-react";
+import LinkButton from "../LinkButton.astro";
+import Section from "../Section.astro";
+
+const github = "https://github.com/alvaro-jrr";
+const linkedIn =
+	"https://www.linkedin.com/in/alvaro-resplandor-rodriguez-6a7a4824a/";
+const email = "alvarojrr79@gmail.com";
+---
+
+<Section className="py-24">
+	<div class="grid grid-cols-1 md:grid-cols-2">
+		<div class="flex flex-col gap-6">
+			<div class="space-y-2">
+				<h1 class="font-karla text-4xl font-bold text-foreground">
+					Alvaro Resplandor
+				</h1>
+
+				<p class="font-karla text-2xl text-muted-foreground">
+					Desarrollador Web y de Aplicaciones Móviles
+				</p>
+			</div>
+
+			<LinkButton href="cv.pdf" download="Alvaro Resplandor - CV" class="w-fit">
+				<span>Descargar CV</span>
+
+				<Download client:load className="ml-2 h-4 w-4" />
+			</LinkButton>
+
+			<div class="flex gap-x-4">
+				<LinkButton
+					href={`mailto:${email}`}
+					target="_blank"
+					variant="ghost"
+					size="icon"
+				>
+					<span class="sr-only">Enviar correo</span>
+
+					<Mail size={24} />
+				</LinkButton>
+
+				<LinkButton href={github} target="_blank" variant="ghost" size="icon">
+					<Github size={24} />
+
+					<span class="sr-only">Github</span>
+				</LinkButton>
+
+				<LinkButton href={linkedIn} target="_blank" variant="ghost" size="icon">
+					<LinkedIn size={24} />
+
+					<span class="sr-only">LinkedIn</span>
+				</LinkButton>
+			</div>
+		</div>
+
+		<div class="hidden md:grid md:place-content-center">
+			<Profile size={300} loading="eager" />
+		</div>
+	</div>
+</Section>
