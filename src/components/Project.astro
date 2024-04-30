@@ -27,6 +27,8 @@ const { name, description, image, repositoryUrl } = Astro.props;
 
 		<Image
 			src={image}
+			height={300}
+			loading="eager"
 			class="aspect-video w-full object-cover"
 			alt={`Vistazo del proyecto ${name}`}
 		/>
